@@ -16,3 +16,8 @@ allprojects {
 dependencies {
 	        implementation 'com.github.anish59:ModuleMaker:Tag'
 	}
+
+To only use AppLogger:
+implementation 'com.github.anish59.ModuleMaker:apputlility:1.0.0'
+
+To only use 
