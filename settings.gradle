@@ -1,0 +1,5 @@
+rootProject.name='ModuleMaker'
+include ':app'
+include ':apputility'
+include ':apputlility'
+include ':appextensions'
