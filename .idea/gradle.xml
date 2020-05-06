@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/appextensions" />
             <option value="$PROJECT_DIR$/apputility" />
             <option value="$PROJECT_DIR$/apputlility" />
+            <option value="$PROJECT_DIR$/audiorecorder" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

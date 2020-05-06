@@ -1,8 +1,10 @@
 package com.modulemaker
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.carowlers.helper.AppLogger
+import com.library.ui.AudioRecorderActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,5 +14,11 @@ class MainActivity : AppCompatActivity() {
 
         AppLogger.e("Hi")
         AppLogger.e(User("Anish", "9876543210"))
+
+        txt.setOnClickListener {
+
+            AudioRecorderActivity.openAudioRecorder(this)
+
+        }
     }
 }

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="androidx.appcompat.widget.AppCompatButton" />
+
+        <variable
+            name="viewModel"
+            type="com.library.ui.RecorderActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.AudioRecorderActivity">
+
+        <ImageView
+            android:id="@+id/imgMic"
+            android:layout_width="@dimen/dp52"
+            android:layout_height="@dimen/dp52"
+            android:layout_marginBottom="@dimen/dp8"
+            android:src="@drawable/ic_mic_black_24dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:text="00:00"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgMic" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp52"
+            android:background="@color/colorPrimary"
+            android:onClick="@{()-> viewModel.recordOnClick(btnRecord,imgMic)}"
+            android:text="@string/start"
+            android:textColor="@color/color_black"
+            app:layout_constraintBottom_toTopOf="@id/imgPlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:onClick="@{()-> viewModel.playRecording(imgPlay,seekAudio)}"
+            android:layout_marginBottom="@dimen/dp52"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/dp36"
+            android:id="@+id/imgPlay"
+            android:src="@drawable/ic_play_24dp"
+            android:layout_width="@dimen/dp36"
+            android:layout_height="@dimen/dp36" />
+
+        <SeekBar
+            app:layout_constraintStart_toEndOf="@+id/imgPlay"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp8"
+            app:layout_constraintEnd_toStartOf="@id/imgDelete"
+            app:layout_constraintTop_toTopOf="@id/imgPlay"
+            app:layout_constraintBottom_toBottomOf="@id/imgPlay"
+            android:id="@+id/seekAudio"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="@dimen/dp16" />
+
+        <ImageView
+            android:layout_marginBottom="@dimen/dp52"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/dp36"
+            android:id="@+id/imgDelete"
+            android:src="@drawable/ic_delete_24dp"
+            android:layout_width="@dimen/dp36"
+            android:layout_height="@dimen/dp36" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -2,6 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.apputlility">
 
-    <application android:allowBackup="false"></application>
+    <application android:allowBackup="false" />
 
 </manifest>
