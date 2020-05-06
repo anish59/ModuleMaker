@@ -125,27 +125,6 @@ class RecorderActivityViewModel(
         }
     }
 
-    private fun showAudioProgress(
-        player: MediaPlayer,
-        seekAudio: SeekBar
-    ) {
-        val duration: Int = player.duration
-        val amountToUpdate: Long = (duration / 100).toLong()
-        val mTimer = Timer()
-
-        mTimer.schedule(object : TimerTask() {
-            override fun run() {
-                if (amountToUpdate * seekAudio.progress < duration) {
-                    var p: Int = seekAudio.progress
-                    p += 1
-                    seekAudio.progress = p
-                }
-            }
-
-        }, amountToUpdate)
-
-    }
-
 
     private fun stopPlaying() {
         player?.release()
